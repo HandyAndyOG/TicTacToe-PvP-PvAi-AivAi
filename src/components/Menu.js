@@ -9,6 +9,8 @@ const style = {
     marginTop: "2vh",
     marginBottom: "2vh",
 }
+
+
 const Menu = ({ clickHumanBtn, clickAiBtn, clickAiVsAiBtn }) => {
     return(
         <div style={style}>

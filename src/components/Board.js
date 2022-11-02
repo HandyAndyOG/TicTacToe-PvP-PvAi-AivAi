@@ -11,7 +11,7 @@ const style = {
 	boxShadow: "0 1px 1px 0 rgb(64, 64, 64), 0 5px 5px 0 rgb(64, 64, 64)",
 };
 
-// maps out squares using square and index i, passes through a value catcher called "square" and a click listener related to the index. Not a problem as the items are not added or removed like a shopping list.
+// maps out squares using square and index i, passes through a value catcher called "square" and a click listener related to the index. Not a problem to use index here as the items are not added or removed like a shopping list.
 const Board = ({ squares, onClick }) => (
 
 	<div className='boardQuery' style={style}>

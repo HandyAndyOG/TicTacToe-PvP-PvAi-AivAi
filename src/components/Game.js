@@ -3,29 +3,11 @@ import Board from './Board'
 import {checkWinner, AiMove, HumanAiMove, Winner } from './Winner'
 import Menu from './Menu'
 import { useIdleTimer } from 'react-idle-timer';
-// import Modal from 'react-modal'
 
-// Modal.setAppElement('#root')
-
-// const modalStyle = {
-//     height: "80vh",
-//     textAlign: "center",
-//     fontSize: "2vh",
-//     borderRadius: "30px",
-//     border: "5px solid #f2f2f2",
-//     padding: "2vw",
-//     backgroundColor: "#1553b7"
-// }
-
-// const h2Modal = {
-//     marginTop: "1vh",
-//     marginBottom: "1vh",
-//     border: "5px solid #f2f2f2",
-//     borderRadius: "40px",
-//     color: "#f2f2f2",
-//     backgroundColor: "#FFB32C",
-
-// }
+// The Game function itterates through the different game modes, and sets the correct states according to the mode.
+// react-idle library was utilised to countdown the idle timer that resets on user events. When the idle ends the ai function is called to play 'O'
+// A modal is commented out for now so you can see the automated switch to ai from human
+// the modal is a pop up when the user is idle. The ai completes the game in the background
 
 const Game = () => {
     const [board, setBoard] = useState(Array(9).fill(null));
@@ -53,11 +35,9 @@ const Game = () => {
     
     const handleOnActive = event => {
         setUserIdle(false)
-        // setModalIsOpen(false)
         }
     const handleOnAction = (e) => {
         setUserIdle(false)
-        // setModalIsOpen(false)
         }
     
     const { getRemainingTime, getLastActiveTime } = useIdleTimer({
@@ -135,7 +115,6 @@ const Game = () => {
         setIsAi2On(null)
         setAfkHuman(null)
         setUserIdle(false)
-        // setModalIsOpen(false)
     }
 
     const clickAiBtn = () => {
@@ -164,16 +143,9 @@ const Game = () => {
         setMenu(true)
         setTurn("X")
     }
-
-    
+   
     return(
     <>
-            {/* <Modal isOpen={modalIsOpen}>
-                <div style={modalStyle}>
-                    <h2 style={h2Modal}>You must be AFK...</h2>
-                    <p>We'll finish up the game for you OR move your mouse to continue where the Ai has left off</p>
-                </div>
-            </Modal> */}
             <Menu clickHumanBtn={clickHumanBtn} clickAiBtn={clickAiBtn} clickAiVsAiBtn={clickAiVsAiBtn} />
             <Board squares={board} onClick={handleClick} menu={menu} Winner={Winner} isAiNext={isAiNext} Turn={Turn} isAi1On={isAi1On} isAi2On={isAi2On} userIdle={userIdle} afkHuman={afkHuman}/>
             <div className='results'>
