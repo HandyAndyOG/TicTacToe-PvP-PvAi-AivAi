@@ -123,6 +123,12 @@ button {
   transition: 500ms;
   box-shadow: 0 10px 10px 0 rgb(64, 64, 64), 0 50px 50px 0 rgb(64, 64, 64);
 }
+.clickedMenu {
+  background-color: #f2f2f2;
+  color: #FFB32C;
+  transition: 500ms;
+  box-shadow: 0 10px 10px 0 rgb(64, 64, 64), 0 50px 50px 0 rgb(64, 64, 64);
+}
 
 .squareButton {
   text-align: center;
